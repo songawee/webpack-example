@@ -34,7 +34,7 @@ yarn build
 
 ## Results
 
-Using deep imports, we can see a small bundle size:
+Using deep imports (`rxjs/operators/<operator-name>`), we can see a small bundle size:
 
 ![Alt text](doc/deep_import.png?raw=true)
 
