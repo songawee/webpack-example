@@ -1,0 +1,26 @@
+{
+  "compilerOptions": {
+    "allowSyntheticDefaultImports": false,
+    "allowJs": true,
+    "declaration": false,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "noImplicitAny": false,
+    "noUnusedLocals": true,
+    "suppressImplicitAnyIndexErrors": false,
+    "lib": [
+      "es2015",
+      "dom",
+      "es2016"
+    ],
+    "module": "esnext",
+    "moduleResolution": "node",
+    "outDir": "./lib",
+    "sourceMap": true,
+    "target": "es5"
+  },
+  "include": [
+    "./src/**/*.ts",
+  ],
+  "compileOnSave": false
+}
