@@ -38,6 +38,6 @@ Using deep imports (`rxjs/operators/<operator-name>`), we can see a small bundle
 
 ![Alt text](doc/deep_import.png?raw=true)
 
-With using a destructured import from `rxjs/operators`:
+With using a destructured import from `rxjs/operators`, we see a larger RxJS footprint:
 
 ![Alt text](doc/full_operators.png?raw=true)
