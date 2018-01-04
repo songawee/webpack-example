@@ -31,3 +31,13 @@ yarn install
 ```js
 yarn build
 ```
+
+## Results
+
+Using deep imports, we can see a small bundle size:
+
+![Alt text](doc/deep_import.png?raw=true)
+
+With using a destructured import from `rxjs/operators`:
+
+![Alt text](doc/full_operators.png?raw=true)
