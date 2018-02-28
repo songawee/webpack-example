@@ -30,6 +30,30 @@ async function main() {
   );
 
   console.log(jsFileStats);
+
+  await http({
+    method: "POST",
+    uri:
+      "https://wt-05df8073437afa1c18ea4040f66ff2f9-0.run.webtask.io/webtask-test",
+    json: {
+      stats: jsFileStats,
+      meta: {
+        pr: process.env.CI_PULL_REQUEST,
+      },
+    },
+  });
+}
+
+async function http(opts) {
+  return new Promise((resolve, reject) => {
+    request(opts, (err, res, body) => {
+      if (err || res.statusCode === 500) {
+        return reject(err);
+      }
+
+      resolve(res);
+    });
+  });
 }
 
 main()
