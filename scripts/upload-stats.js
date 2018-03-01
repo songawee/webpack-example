@@ -29,8 +29,6 @@ async function main() {
       })
   );
 
-  console.log(jsFileStats);
-
   await http({
     method: "POST",
     uri:
