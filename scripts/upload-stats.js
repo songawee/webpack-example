@@ -39,6 +39,7 @@ async function main() {
       stats: jsFileStats,
       meta: {
         pr: process.env.CI_PULL_REQUEST,
+        sha: process.env.CIRCLE_SHA1,
       },
     },
   });
