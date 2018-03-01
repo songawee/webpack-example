@@ -40,6 +40,8 @@ async function main() {
       meta: {
         pr: process.env.CI_PULL_REQUEST,
         sha: process.env.CIRCLE_SHA1,
+        username: process.env.CIRCLE_PROJECT_USERNAME,
+        repo: process.env.CIRCLE_PROJECT_REPONAME,
       },
     },
   });
