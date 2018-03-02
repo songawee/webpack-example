@@ -29,8 +29,6 @@ async function main() {
       })
   );
 
-  console.log(process.env.CI_PULL_REQUEST);
-
   await http({
     method: "POST",
     uri:
@@ -38,8 +36,9 @@ async function main() {
     json: {
       stats: jsFileStats,
       meta: {
-        username: "songawee",
-        repo: "webpack-example",
+        username: process.env.CIRCLE_PROJECT_USERNAME,
+        repo: process.env.CIRCLE_PROJECT_REPONAME,
+        pr: process.env.CI_PULL_REQUEST,
       },
     },
   });
