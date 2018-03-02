@@ -1,7 +1,7 @@
 const fs = require("fs");
 const path = require("path");
-const util = require("util");
 const request = require("request");
+const util = require("util");
 
 const readDir = util.promisify(fs.readdir);
 const openFile = util.promisify(fs.open);
@@ -12,10 +12,7 @@ async function main() {
   const files = await readDir(dirPath);
   const jsFileStats = await Promise.all(
     files
-      .filter(file => {
-        // Ignore sourcemaps
-        return file.includes(".js") && !file.includes(".map");
-      })
+      .filter(file => file.includes(".js") && !file.includes(".map"))
       .map(async file => {
         const filePath = path.resolve(dirPath, file);
         const openedFile = await openFile(filePath, "r");
@@ -24,9 +21,15 @@ async function main() {
         return {
           fileName: file,
           size: stats.size / 1000,
-          type: "file",
         };
       })
+  );
+
+  console.log(
+    jsFileStats,
+    process.env.CIRCLE_PROJECT_USERNAME,
+    process.env.CIRCLE_PROJECT_REPONAME,
+    process.env.CI_PULL_REQUEST
   );
 
   await http({
