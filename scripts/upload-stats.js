@@ -25,22 +25,14 @@ async function main() {
       })
   );
 
-  console.log(
-    jsFileStats,
-    process.env.CIRCLE_PROJECT_USERNAME,
-    process.env.CIRCLE_PROJECT_REPONAME,
-    process.env.CI_PULL_REQUEST
-  );
-
   await http({
     method: "POST",
-    uri:
-      "https://wt-05df8073437afa1c18ea4040f66ff2f9-0.run.webtask.io/webtask-test",
+    uri: process.env.WEBTASK_URL,
     json: {
       stats: jsFileStats,
       meta: {
-        username: process.env.CIRCLE_PROJECT_USERNAME,
-        repo: process.env.CIRCLE_PROJECT_REPONAME,
+        username: "songawee",
+        repo: "webpack-example",
         pr: process.env.CI_PULL_REQUEST,
       },
     },
