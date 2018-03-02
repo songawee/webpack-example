@@ -8,9 +8,11 @@
   "scripts": {
     "prebuild": "rm -rf dist",
     "build": "NODE_ENV=production run-p build:client",
-    "build:client": "webpack --config ./config/webpack.prod.js"
+    "build:client": "webpack --config ./config/webpack.prod.js",
+    "upload-stats": "node scripts/upload-stats.js"
   },
   "dependencies": {
+    "@types/lodash": "4.14.104",
     "@types/node": "8.5.2",
     "autoprefixer": "^7.2.1",
     "awesome-typescript-loader": "3.2.1",
@@ -25,6 +27,7 @@
     "file-loader": "0.11.2",
     "html-loader": "0.5.0",
     "image-webpack-loader": "3.3.1",
+    "lodash": "4.17.5",
     "node-sass": "4.5.3",
     "npm-run-all": "4.0.2",
     "postcss-loader": "2.0.6",

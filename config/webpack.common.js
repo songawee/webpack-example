@@ -6,6 +6,7 @@ const webpack = require("webpack");
 module.exports = {
   entry: {
     app: path.resolve(__dirname, "../src/index.ts"),
+    "page-two": path.resolve(__dirname, "../src/page-two.ts"),
   },
   output: {
     filename: "[name].js",
