@@ -23,11 +23,13 @@ async function main() {
 
         return {
           fileName: file,
-          stats: stats.size / 1000,
+          size: stats.size / 1000,
           type: "file",
         };
       })
   );
+
+  console.log(process.env.CI_PULL_REQUEST);
 
   await http({
     method: "POST",
